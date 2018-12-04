@@ -1,1 +1,23 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <div class="header-info">
+      <div class="avatar">
+        <img src="../assets/imgs/avatar-default.png" alt="logo">
+      </div>
+      <h3 class="title">Dima Gulyaev</h3>
+    </div>
+  </ion-header>
+
+  <ion-content class="menu-content">
+    <div class="menu-list">
+      <div class="item" menuClose *ngFor="let page of actionService.pages" (click)="openPage(page)" [ngClass]="{'active': page.isActive}">
+        <i class="icon" *ngIf="!page.isActive" [ngStyle]="{'background': 'url(' + page.icon + ') no-repeat center'}"></i>
+        <i class="icon" *ngIf="page.isActive" [ngStyle]="{'background': 'url(' + page.activeIcon + ') no-repeat center'}"></i>
+        {{ page.title }}
+      </div>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

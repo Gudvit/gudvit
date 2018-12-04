@@ -1,3 +1,70 @@
 page-home {
+  .scroll-content {
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(77,35,53,1) 0%, rgba(25,28,61,1) 100%);
+  }
 
+  .logo {
+    margin: 0 30px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    position: relative;
+
+    .item {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px 0;
+
+      i {
+        width: 95px;
+        height: 95px;
+        background: #fff;
+        border-radius: 50%;
+        display: inline-flex;
+
+        &.facebook {
+          background: #fff url("/assets/icons/facebook.svg") center no-repeat;
+          background-size: 42px;
+        }
+
+        &.google {
+          background: #fff url("/assets/icons/google.svg") center no-repeat;
+          background-size: 42px;
+        }
+
+        &.twitter {
+          background: #fff url("/assets/icons/twitter.svg") center no-repeat;
+          background-size: 42px;
+        }
+
+        &.linkedin {
+          background: #fff url("/assets/icons/linkedin.svg") center no-repeat;
+          background-size: 42px;
+        }
+
+        &.email {
+          background: #fff url("/assets/icons/email.svg") center no-repeat;
+          background-size: 42px;
+        }
+      }
+
+      &:last-child {
+        position: absolute;
+        width: 80px;
+        border-radius: 50%;
+        height: 80px;
+        top: 50%;
+        margin: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

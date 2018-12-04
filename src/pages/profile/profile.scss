@@ -1,0 +1,15 @@
+page-profile {
+  .menu-button {
+    bottom: 7px;
+  }
+
+  .edit-profile {
+    background: url(../assets/icons/edit-w.svg) no-repeat center center;
+    background-size: 20px;
+    width: 50px;
+    height: 30px;
+    bottom: 7px;
+    right: 0;
+    position: absolute;
+  }
+}

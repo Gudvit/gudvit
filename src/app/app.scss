@@ -1,16 +1,104 @@
-// http://ionicframework.com/docs/theming/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
 
+.menu-button {
+  background: url(../assets/icons/menu.svg) no-repeat center;
+  background-size: 25px;
+  width: 50px;
+  height: 30px;
+  bottom: 40px;
+  position: absolute;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+ion-navbar {
+  .toolbar-background {
+    background: $gradient
+  }
+
+  .back-button {
+    background: url(../assets/icons/back-arrow.svg) no-repeat center center;
+    background-size: 19px;
+    width: 40px;
+    height: 35px;
+    position: absolute;
+
+    .button-inner {
+      display: none;
+    }
+  }
+
+  .toolbar-title {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .toolbar-content ion-title {
+    padding: 0 35px 1px;
+  }
+}
+
+// menu
+.header-info {
+  background: $gradient;
+  background-size: cover;
+  padding: 20px 20px 0;
+  min-height: 150px;
+
+  .avatar {
+    min-height: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid $border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    img {
+      height: 80px;
+      width: auto;
+      max-width: 300%;
+    }
+  }
+
+  .title {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0 0;
+  }
+}
+
+.menu-content {
+  .menu-list {
+    border-top: 1px solid $border;
+
+    .item {
+      font-size: 14px;
+      color: $text;
+      padding: 0 15px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        background-size: 22px!important;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        transition: 0.4s ease-in-out;
+      }
+
+      &.active {
+        background: $grad;
+        color: white;
+      }
+    }
+  }
+}
+// end menu

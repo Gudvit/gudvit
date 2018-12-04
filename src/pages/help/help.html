@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Help</ion-title>
+  </ion-navbar>
+  <i class="menu-button" menuToggle></i>
+  <div class="sub-header"></div>
+</ion-header>
+
+<ion-content>
+  <ion-list class="accordion-list">
+    <div class="item-list" *ngFor="let item of information; let i = index" no-lines>
+      <div class="wrapper" (click)="toggleSection(i)">
+        <div class="title">{{ item.title }}</div>
+        <i class="switcher" [ngClass]="{'active': !item.open}"></i>
+      </div>
+      <p class="description" [ngClass]="{'active': !item.open}">{{ item.description }}</p>
+      <span class="insert" [ngClass]="{'active': !item.open}"></span>
+    </div>
+  </ion-list>
+</ion-content>

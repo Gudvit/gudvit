@@ -3,19 +3,20 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-profile',
+  templateUrl: 'profile.html',
 })
-export class HomePage {
+export class ProfilePage {
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public menu: MenuController,
   ) {
-    this.menu.swipeEnable(false);
+    this.menu.swipeEnable(true);
   }
 
-  signIn() {
-    this.navCtrl.setRoot('ProfilePage');
+  editProfile() {
+
   }
 }
