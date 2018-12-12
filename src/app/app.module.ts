@@ -4,11 +4,13 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Camera } from "@ionic-native/camera";
 
 import { MyApp } from './app.component';
 import { ActionsProvider } from '../providers/actions/actions';
 import { ProfileProvider } from '../providers/profile/profile';
 import { ApiProvider } from '../providers/api/api';
+import { ValidationProvider } from '../providers/validation/validation';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ApiProvider } from '../providers/api/api';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      pageTransition: 'ios-transition'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -26,13 +30,15 @@ import { ApiProvider } from '../providers/api/api';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {
       provide: ErrorHandler,
       useClass: IonicErrorHandler
     },
     ActionsProvider,
     ProfileProvider,
-    ApiProvider
+    ApiProvider,
+    ValidationProvider
   ]
 })
 export class AppModule {}

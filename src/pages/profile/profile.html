@@ -6,6 +6,40 @@
   <i class="edit-profile" (click)="editProfile()"></i>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <div class="user-info">
+    <div class="wrapper">
+      <div class="wrap-image" (click)="showImage()">
+        <div class="avatar" [style.backgroundImage]="'url(' + profileService.user.avatar +')'"></div>
+      </div>
+    </div>
+    <div class="title-name">{{ profileService.user.firstName }} {{ profileService.user.lastName }}</div>
+  </div>
+  <image-preview [image]="profileService.user.avatar" [ngClass]="{'animate': showPreview}" (click)="closePreview()"></image-preview>
+  <div class="info">
+    <div class="wrap-field">
+      <span class="placeholder">Email Address</span>
+      <span class="value">{{ profileService.user.email }}</span>
+    </div>
+    <div class="wrap-field">
+      <span class="placeholder">Country</span>
+      <span class="value">{{ profileService.user.country }}</span>
+    </div>
+    <div class="wrap-field">
+      <span class="placeholder">City</span>
+      <span class="value">{{ profileService.user.city }}</span>
+    </div>
+    <div class="wrap-field">
+      <span class="placeholder">Phone</span>
+      <span class="value">{{ profileService.user.phone }}</span>
+    </div>
+    <div class="wrap-field">
+      <span class="placeholder">My Language</span>
+      <span class="value">{{ profileService.user.language }}</span>
+    </div>
+    <div class="wrap-field">
+      <span class="placeholder">Zip Code</span>
+      <span class="value">{{ profileService.user.zipCode }}</span>
+    </div>
+  </div>
 </ion-content>

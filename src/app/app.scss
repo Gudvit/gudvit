@@ -2,6 +2,32 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
+// android fixes
+.list-md {
+  .item-input:last-child {
+    border-bottom: 0;
+  }
+}
+
+.footer-md::before {
+  height: 0;
+}
+
+.list-md {
+  .item-input:last-child {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+.list > .item-block:last-child,
+.list > .item-block:first-child {
+  border-top: 0;
+  border-bottom: 0;
+}
+//
+// end android fixes
+
 .menu-button {
   background: url(../assets/icons/menu.svg) no-repeat center;
   background-size: 25px;
@@ -22,6 +48,7 @@ ion-navbar {
     width: 40px;
     height: 35px;
     position: absolute;
+    z-index: 30;
 
     .button-inner {
       display: none;
@@ -102,3 +129,173 @@ ion-navbar {
   }
 }
 // end menu
+
+// footer
+.wrapper-footer {
+  padding: 10px 15px;
+}
+// footer end
+
+// ----------- buttons -----------
+button.basic {
+  height: 42px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 70px;
+  background: $gradient;
+
+  &.activated {
+    background: $gradient;
+  }
+}
+
+button.empty {
+  height: 42px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 70px;
+  border: 1px solid white;
+  background-color: rgba(0,0,0,0);
+
+  &.activated {
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.button-md {
+  box-shadow: none !important;
+}
+//----------- buttons end -----------
+
+
+// ----------- input -----------
+.wrap-form {
+  padding: 5px 15px;
+}
+
+.item-block {
+  padding: 0;
+  transition: none;
+  min-height: 55px;
+  max-height: 55px;
+
+  &.item-input {
+    .item-inner {
+      box-shadow: none !important;
+      border-bottom: 0 !important;
+      padding: 0 0 11px;
+
+      .label {
+        font-size: 13px;
+        color: $text;
+        margin-top: 0;
+        display: none;
+        transform: translate3d(0, 0, 0);
+
+        &.no-valid {
+          position: absolute;
+          bottom: 5px;
+          font-size: 11px;
+          left: 0;
+          margin: 0;
+          color: $error;
+          max-width: 250px;
+          display: inline-flex;
+        }
+      }
+
+      .text-input {
+        font-size: 15px;
+        color: $text;
+        width: 100%;
+        padding-bottom: 15px;
+        margin: 0;
+      }
+
+      .text-input {
+        transform: none !important;
+        opacity: 1 !important;
+      }
+
+      .cloned-input {
+        opacity: 0 !important;
+      }
+    }
+
+    &.item-input-has-value,
+    &.item-input-has-focus {
+      .label {
+        font-size: 14px;
+        color: $label;
+        display: inline-flex;
+
+        &[floating] {
+          position: absolute;
+          right: 0;
+          margin: 0;
+          padding: 0;
+          bottom: 22px;
+          font-size: 10px;
+          text-align: right;
+          max-width: 100%;
+          transform: translate3d(0, 0, 0);
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+.text-input {
+  border-bottom: 1px solid $border;
+}
+
+.error {
+  .text-input {
+    border-bottom: 1px solid $error!important;
+  }
+}
+// end input
+
+
+// close button
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+// end close button
+
+
+.animate {
+  .wrapper {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.25s ease-in transform;
+  }
+
+  .overlay {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.2s ease opacity;
+  }
+}

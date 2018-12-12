@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="avatar">
+    <div class="avatar-wrapper" tappable (click)="popupAvatarSource()">
+      <img class="user-image" *ngIf="!avatarChanged" [src]="avatar">
+      <div class="avatar-image" *ngIf="avatarChanged" [style.backgroundImage]="'url(' + profileService.user.avatar +')'"></div>
+      <div class="camera-wrapper">
+        <img class="camera" src="assets/icons/camera-white.svg"/>
+      </div>
+    </div>
+  </div>
+
+
+  <form [formGroup]="form" (submit)="signIn(form.value)">
+    <ion-list class="wrap-form">
+      <div class="wrapper-input">
+        <ion-item [ngClass]="{'error': isInvalidField('firstName')}">
+          <ion-label floating>First Name</ion-label>
+          <ion-input type="text" name="firstName" formControlName="firstName" placeholder="First Name"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('firstName')">First Name not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('lastName') }">
+          <ion-label floating>Last Name</ion-label>
+          <ion-input type="text" name="email" formControlName="lastName" placeholder="Last Name"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('lastName')">Last Name not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('email') }">
+          <ion-label floating>Email Address</ion-label>
+          <ion-input type="email" name="email" formControlName="email" placeholder="Email Address"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('email')">Email not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('country') }">
+          <ion-label floating>Country</ion-label>
+          <ion-input type="text" name="country" formControlName="country" placeholder="Country"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('country')">Country not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('city') }">
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" name="city" formControlName="city" placeholder="City"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('city')">City not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('phone') }">
+          <ion-label floating>Phone</ion-label>
+          <ion-input type="tel" name="phone" formControlName="phone" placeholder="Phone"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('phone')">Phone not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('language') }">
+          <ion-label floating>Language</ion-label>
+          <ion-input type="tel" name="language" formControlName="language" placeholder="Language"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('language')">Language not valid</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'error': isInvalidField('zipCode') }">
+          <ion-label floating>Zip Code</ion-label>
+          <ion-input type="text" name="zipCode" formControlName="zipCode" placeholder="Zip Code"></ion-input>
+          <ion-label class="no-valid" *ngIf="isInvalidField('zipCode')">Zip Code not valid</ion-label>
+        </ion-item>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <div class="wrapper-footer">
+    <button ion-button class="basic" block (click)="changeProfile()">Save</button>
+  </div>
+</ion-footer>

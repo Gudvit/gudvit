@@ -64,6 +64,11 @@ page-home {
         top: 50%;
         margin: 0;
         transform: translateY(-50%);
+
+        i {
+          width: 80px;
+          height: 80px;
+        }
       }
     }
   }
