@@ -21,24 +21,23 @@ export class HelpPage {
   ) {
     this.information = [
       {
-        title: "What is rorem ipsum dolor?",
-        description: "Eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "What is it for?",
+        description: "This application is an ordinary assistant for the Ionic 2-3 developer.",
         open: false
       },
       {
-        title: "What is rorem ipsum dolor?",
-        description: "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        title: "How to use it?",
+        description: "This is open source code in which you can see how to use modules, components, which work for different platforms.",
         open: false
       },
       {
-        title: "What is rorem ipsum dolor?",
-        description: "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        title: "What is useful in this application?",
+        description: "You can easily reuse the working code. Also see how it was implemented",
         open: false
-
       },
       {
-        title: "What is rorem ipsum dolor? with long text",
-        description: "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        title: "This application will expand and you can follow the changes.",
+        description: "You can also participate in the development and open pull requests and leave your comments.",
         open: false
       }
     ]

@@ -38,7 +38,7 @@ import { ValidationProvider } from '../providers/validation/validation';
     ActionsProvider,
     ProfileProvider,
     ApiProvider,
-    ValidationProvider
+    ValidationProvider,
   ]
 })
 export class AppModule {}
