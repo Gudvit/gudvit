@@ -125,10 +125,10 @@ export class ActionsProvider {
     alert.present();
   }
 
-  presentToast(text, color) {
+  presentToast(text, color, duration = 2500) {
     let toast = this.toastCtrl.create({
       message: text,
-      duration: 2500,
+      duration: duration,
       position: 'top',
       cssClass: color
     });

@@ -1,18 +1,50 @@
-<!--
-  Generated template for the NotificationsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>notifications</ion-title>
+    <ion-title>Notifications</ion-title>
   </ion-navbar>
-
+  <i class="menu-button" menuToggle></i>
 </ion-header>
 
-
 <ion-content padding>
-
+  <h2> <i></i>How to create notifications for IOS and Android with ionic 3</h2>
+  <h3>Installation</h3>
+  <span class="code">ionic cordova plugin add phonegap-plugin-push</span>
+  <span class="code">npm install --save @ionic-native/push</span>
+  <h4>Add this plugin to your app's module</h4>
+  <span class="import">
+    <span class="blue">import </span>
+     &#123; Push	&#125;
+    <span class="blue"> from</span>
+    <span class="orange">'@ionic-native/push'</span>
+  </span>
+  <img src="/assets/imgs/push-1.png">
+  <h3>Usage</h3>
+  <h4>Add this in app.component.ts page</h4>
+  <span class="import">
+    <span class="blue">import </span>
+    <span>&#123; Push, PushObject, PushOptions	&#125;</span>
+    <span class="blue"> from</span>
+    <span class="orange">'@ionic-native/push'</span>
+  </span>
+  <span class="import">
+     <span class="blue">constructor </span>(private push: Push) &#123; &#125;
+  </span>
+  <img src="/assets/imgs/push-2.png">
+  <h4>It is best to initialize push notifications when the user is logged in</h4>
+  <img src="/assets/imgs/push-3.png">
+  <h4>And call it when the platform is ready also in app.component.ts</h4>
+  <img src="/assets/imgs/push-4.png">
+  <h3>Now you need to configure for iOS</h3>
+  <h4>Push notifications will go through the APNS server for iOS and for this we need to create a certificate</h4>
+  <h4>Go to <a href="https://developer.apple.com/account/ios">https://developer.apple.com/account/ios</a></h4>
+  <h4>Create a certificate</h4>
+  <h4>After that, you need to include a push notification in the current certificate</h4>
+  <img src="/assets/imgs/push-5.png">
+  <h4>Create a provision profile</h4>
+  <h4>And after that we download the application through xcode and select our provision profile</h4>
+  <img src="/assets/imgs/push-6.png">
+  <h4>And check push notifications on IOS devices</h4>
+  <h3>Now you need to configure for Android</h3>
+  <h4>Push notifications will go through the FCM server for Android and for this we need to create a project in Firebase console</h4>
+  <h4><a href="https://console.firebase.google.com">https://console.firebase.google.com</a></h4>
 </ion-content>

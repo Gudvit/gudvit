@@ -299,3 +299,48 @@ button.empty {
     transition: 0.2s ease opacity;
   }
 }
+
+.blue {
+  color: $basic;
+  padding: 0 5px;
+  display: inline-flex;
+}
+
+.orange {
+  color: $error;
+}
+
+
+// toaster ---------------------------------------------------------------------------------------------------
+.toast-md,
+.toast-ios {
+  &.toast-green {
+    .toast-wrapper {
+      background: #039145;
+    }
+  }
+
+  &.toast-blue {
+    .toast-wrapper {
+      background: #5c73c3;
+    }
+  }
+
+  &.with-icon {
+    .toast-wrapper {
+      padding-left: 35px;
+
+      &:after {
+        content: '';
+        background: url(../assets/icons/icon-logo.png) no-repeat center;
+        background-size: 25px;
+        width: 50px;
+        height: 30px;
+        top: 8px;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+}
+// end toaster -----------------------------------------------------------------------------------------------
